@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Select</title>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+	<style>
+	.main-col {
+		min-height: 700px;
+	}
+	</style>
+</head>
+<body>
+
+	<div class="container" style="margin-top:20px;">
+	<div class="page-header">
+		<h1>.transition()</h1>
+	</div>
+		<div class="row">
+			<div class="col-md-6">
+				<pre class="main-col">
+
+
+
+	var scale = d3.scale.linear()
+		.domain([50, 1000])
+		.range([10, 390]);
+
+	var selection = svg.selectAll("rect")
+	  .data([1000, 61]);
+
+
+	selection
+	  .attr("x", 0)
+	  .attr("y", function(d,i) { return i * 90 + 50 })
+	  .attr("width", scale)
+	  .attr("height", 20)
+	  .style("fill", "steelblue");
+
+	 selection
+	  .exit()
+	  .attr("opacity", 1)
+	  .transition()
+	  .duration(1000)
+		  .attr("opacity", 0)
+		  .remove();
+				</pre>
+				<button class="btn btn-primary pull-right" onclick="run()">run</button>
+			</div>
+			<div class="col-md-6 ">
+				<div class="well main-col">
+					<svg height="650" width="400">
+						<rect x="299" y="200" width="200" height="200" ></rect>
+						<rect x="50" y="50" width="100" height="300" ></rect>
+						<rect x="150" y="400" width="100" height="100" ></rect>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="../bower_components/d3/d3.js"></script>
+	<script src="./js/transition.js"></script>
+</body>
+</html>

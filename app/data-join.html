@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Select</title>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+	<style>
+	.main-col {
+		min-height: 700px;
+	}
+	</style>
+</head>
+<body>
+
+	<div class="container" style="margin-top:20px;">
+	<div class="page-header">
+		<h1>.transition()</h1>
+	</div>
+		<div class="row">
+			<div class="col-md-6">
+				<pre class="main-col">
+/*
+	svg.selectAll("rect")
+	  .data([250, 500, 750])
+	  .enter().append("rect")
+	    .attr("x", 0)
+	    .attr("y", function(d,i) { return i*90+50 })
+	    .attr("width", scale)
+	    .attr("height", 20)
+	    .style("fill", "steelblue");
+   */
+
+	var scale = d3.scale.linear()
+		.domain([50, 1000])
+		.range([10, 390]);
+
+	var selection = svg.selectAll("rect")
+	  .data([500, 750, 1000]);
+
+	selection
+	  .transition()
+	  .duration(1000)
+	  .attr("x", 0)
+	  .attr("y", function(d,i) { return i * 90 + 50 })
+	  .attr("width", scale)
+	  .attr("height", 20)
+	  .style("fill", "steelblue");
+
+	 selection
+	  .exit()
+	  .attr("opacity", 1)
+	  .transition()
+	  .duration(1000)
+		  .attr("opacity", 0)
+		  .remove();
+		  
+				</pre>
+				<button class="btn btn-primary pull-right" onclick="run()">run</button>
+			</div>
+			<div class="col-md-6 ">
+				<div class="well main-col">
+					<svg height="650" width="400">
+						
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="../bower_components/d3/d3.js"></script>
+	<script src="./js/data-join.js"></script>
+</body>
+</html>
