@@ -3,7 +3,7 @@
   "private": true,
   "name": "d3-grazjs",
   "description": "A presentation for the grazjs meetup",
-  "repository": "",
+  "repository": "https://github.com/Marcoga/grazjsd3",
   "license": "MIT",
   "devDependencies": {
     "protractor": "~0.20.1",
@@ -12,6 +12,8 @@
     "shelljs": "^0.2.6"
   },
   "scripts": {
+    "postinstall": "bower install",
+    
     "prestart": "npm install",
     "start": "http-server -p 8000",
 

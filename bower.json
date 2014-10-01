@@ -1,0 +1,13 @@
+{
+  "name": "d3meetup",
+  "description": "A short introduction to d3js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Marcoga/grazjsd3",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "knockout": "~3.2.0",
+    "d3": "~3.4.11"
+  }
+}
