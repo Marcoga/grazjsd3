@@ -10,3 +10,9 @@ Clone the repository, then run `npm install`
 Start the server
 ================
 run `npm start` and the application will run on port 8000
+
+
+Run the app
+===========
+
+go to http://localhost:8000/app/index.html
