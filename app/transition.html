@@ -31,11 +31,13 @@
 
 
 	selection
-	  .attr("x", 0)
-	  .attr("y", function(d,i) { return i * 90 + 50 })
-	  .attr("width", scale)
-	  .attr("height", 20)
-	  .style("fill", "steelblue");
+	  .transition()
+	  .duration(1000)
+		  .attr("x", 0)
+		  .attr("y", function(d,i) { return i * 90 + 50 })
+		  .attr("width", scale)
+		  .attr("height", 20)
+		  .style("fill", "steelblue");
 
 	 selection
 	  .exit()
