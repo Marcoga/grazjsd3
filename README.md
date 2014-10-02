@@ -4,6 +4,8 @@ This is the code that will be used during the presentation of the grazjs meetup 
 
 Installation
 ============
+Install bower `npm install -g bower`
+
 Clone the repository, then run `npm install`
 
 Start the server
